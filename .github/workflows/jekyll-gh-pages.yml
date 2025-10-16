@@ -1,0 +1,62 @@
+name: Secure Jekyll Deploy to GitHub Pages (Hardened)
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+# أقل صلاحيات عامة ممكنة
+permissions:
+  contents: read   # فقط قراءة الملفات بشكل عام
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read     # job-level least privilege
+      pages: none
+      id-token: none
+    steps:
+      - name: Checkout (no credentials, shallow)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          persist-credentials: false   # منع استخدام GITHUB_TOKEN من داخل الخطوات
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Build with Jekyll
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./
+          destination: ./_site
+
+      - name: Validate _site
+        run: |
+          if [ ! -d "_site" ] || [ -z "$(ls -A _site)" ]; then
+            echo "Build failed or _site empty" && exit 1
+          fi
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./_site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: none
+      pages: write
+      id-token: write
+    steps:
+      - name: Deploy to Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
