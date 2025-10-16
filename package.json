@@ -1,0 +1,34 @@
+{
+  "name": "cashier-systems-website",
+  "version": "1.0.0",
+  "description": "موقع متكامل لعرض وبيع أنظمة الكاشير مع لوحة تحكم إدارية",
+  "main": "index.html",
+  "scripts": {
+    "start": "http-server -p 8080 -c-1",
+    "dev": "live-server --port=8080",
+    "build": "echo 'No build process needed for static site'",
+    "deploy": "firebase deploy"
+  },
+  "keywords": [
+    "cashier",
+    "pos",
+    "system",
+    "arabic",
+    "firebase",
+    "javascript",
+    "html",
+    "css"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "live-server": "^1.2.2"
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "your-repository-url"
+  },
+  "homepage": "your-website-url"
+}

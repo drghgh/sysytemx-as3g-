@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AS3G SYSTEM - أنظمة الكاشير الذكية لإدارة أعمالك</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div id="connectionStatus" class="connection-status" style="display: none;"></div>
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-brand">
+                    <h2><i class="fas fa-microchip"></i> AS3G SYSTEM</h2>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#home">الرئيسية</a></li>
+                    <li><a href="#systems">الأنظمة</a></li>
+                    <li><a href="#features">المميزات</a></li>
+                    <li><a href="#faq">الأسئلة الشائعة</a></li>
+                    <li><a href="support.html">الدعم الفني</a></li>
+                    <li><a href="login.html" class="btn-login">تسجيل الدخول</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>AS3G SYSTEM</h1>
+                <h2 style="font-size: 1.8rem; margin-bottom: 1rem; color: rgba(255,255,255,0.9);">أنظمة الكاشير الذكية الجيل الثالث</h2>
+                <p>الحل الأمثل والأكثر تطوراً لإدارة مبيعاتك ومخزونك بذكاء اصطناعي متقدم</p>
+                <div style="margin-top: 2rem;">
+                    <a href="#systems" class="btn-primary">اكتشف أنظمتنا</a>
+                    <a href="#features" class="btn-primary" style="margin-right: 1rem; background: rgba(255,255,255,0.2); border: 2px solid white;">المميزات الحصرية</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="images/cashier-hero.jpg" alt="نظام كاشير">
+            </div>
+        </div>
+    </section>
+
+    <!-- Systems Section -->
+    <section id="systems" class="systems">
+        <div class="container">
+            <h2 class="section-title">أنظمة الكاشير المتاحة</h2>
+            <div class="systems-grid" id="systemsGrid">
+                <!-- Systems will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">لماذا تختار AS3G SYSTEM؟</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-brain"></i>
+                    <h3>ذكاء اصطناعي متقدم</h3>
+                    <p>تحليلات ذكية وتوقعات دقيقة للمبيعات والطلب باستخدام الذكاء الاصطناعي</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>تقارير تفاعلية متقدمة</h3>
+                    <p>لوحات معلومات تفاعلية مع رسوم بيانية متحركة وتحليلات عميقة</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>أمان عالي المستوى</h3>
+                    <p>تشفير متقدم وحماية شاملة للبيانات مع نسخ احتياطي تلقائي</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>تطبيق موبايل ذكي</h3>
+                    <p>تطبيق متقدم للأندرويد والآيفون مع إشعارات فورية وإدارة كاملة</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-network-wired"></i>
+                    <h3>تكامل شامل</h3>
+                    <p>ربط مع جميع أنظمة المحاسبة والدفع الإلكتروني والمنصات التجارية</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-users-cog"></i>
+                    <h3>إدارة متعددة المستويات</h3>
+                    <p>نظام صلاحيات متقدم وإدارة الموظفين مع تتبع الأداء</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-language"></i>
+                    <h3>دعم متعدد اللغات</h3>
+                    <p>واجهة عربية كاملة مع دعم اللغة الإنجليزية والفرنسية</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-headset"></i>
+                    <h3>دعم فني احترافي</h3>
+                    <p>فريق دعم متخصص متاح 24/7 مع تدريب مجاني وورش عمل</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-qrcode"></i>
+                    <h3>تقنيات حديثة</h3>
+                    <p>دعم QR Code، NFC، والدفع اللاتلامسي مع تقنيات المستقبل</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-rocket"></i>
+                    <h3>أداء فائق السرعة</h3>
+                    <p>معالجة سريعة للمعاملات مع استجابة فورية وتحديثات لحظية</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-cogs"></i>
+                    <h3>تخصيص كامل</h3>
+                    <p>إمكانية تخصيص الواجهات والتقارير حسب احتياجات عملك</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-globe"></i>
+                    <h3>وصول من أي مكان</h3>
+                    <p>إدارة أعمالك من أي مكان في العالم عبر الإنترنت بأمان تام</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advanced Features Section -->
+    <section class="advanced-features" style="padding: 80px 0; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+        <div class="container">
+            <h2 class="section-title" style="color: white; margin-bottom: 3rem;">AS3G SYSTEM - التقنيات المتقدمة</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
+                <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 15px; backdrop-filter: blur(10px);">
+                    <i class="fas fa-robot" style="font-size: 3rem; margin-bottom: 1rem; color: #ffd700;"></i>
+                    <h3>الذكاء الاصطناعي الجيل الثالث</h3>
+                    <p>خوارزميات متقدمة للتعلم الآلي والتنبؤ الدقيق بسلوك العملاء واتجاهات السوق</p>
+                </div>
+                
+                <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 15px; backdrop-filter: blur(10px);">
+                    <i class="fas fa-cloud" style="font-size: 3rem; margin-bottom: 1rem; color: #00d4ff;"></i>
+                    <h3>البنية السحابية المتقدمة</h3>
+                    <p>خوادم سحابية عالية الأداء مع توزيع جغرافي وضمان استمرارية العمل 99.9%</p>
+                </div>
+                
+                <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 15px; backdrop-filter: blur(10px);">
+                    <i class="fas fa-lock" style="font-size: 3rem; margin-bottom: 1rem; color: #ff6b6b;"></i>
+                    <h3>الأمان المتقدم</h3>
+                    <p>تشفير عسكري AES-256 مع مصادقة متعددة العوامل وحماية من الهجمات السيبرانية</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center;">
+                <h3 style="margin-bottom: 2rem;">شهادات الجودة والاعتماد</h3>
+                <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; align-items: center;">
+                    <div style="background: rgba(255,255,255,0.2); padding: 1rem 2rem; border-radius: 10px;">
+                        <i class="fas fa-certificate" style="margin-left: 10px;"></i>
+                        ISO 27001
+                    </div>
+                    <div style="background: rgba(255,255,255,0.2); padding: 1rem 2rem; border-radius: 10px;">
+                        <i class="fas fa-shield-alt" style="margin-left: 10px;"></i>
+                        SOC 2 Type II
+                    </div>
+                    <div style="background: rgba(255,255,255,0.2); padding: 1rem 2rem; border-radius: 10px;">
+                        <i class="fas fa-check-circle" style="margin-left: 10px;"></i>
+                        PCI DSS
+                    </div>
+                    <div style="background: rgba(255,255,255,0.2); padding: 1rem 2rem; border-radius: 10px;">
+                        <i class="fas fa-globe" style="margin-left: 10px;"></i>
+                        GDPR Compliant
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="statistics" style="padding: 80px 0; background: #f8f9fa;">
+        <div class="container">
+            <h2 class="section-title">AS3G SYSTEM بالأرقام</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; text-align: center;">
+                <div style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <div style="font-size: 3rem; font-weight: 700; color: #2c5aa0; margin-bottom: 0.5rem;">50,000+</div>
+                    <div style="color: #666;">عميل راضٍ</div>
+                </div>
+                <div style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <div style="font-size: 3rem; font-weight: 700; color: #28a745; margin-bottom: 0.5rem;">99.9%</div>
+                    <div style="color: #666;">وقت التشغيل</div>
+                </div>
+                <div style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <div style="font-size: 3rem; font-weight: 700; color: #ff6b6b; margin-bottom: 0.5rem;">24/7</div>
+                    <div style="color: #666;">دعم فني</div>
+                </div>
+                <div style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <div style="font-size: 3rem; font-weight: 700; color: #ffc107; margin-bottom: 0.5rem;">15+</div>
+                    <div style="color: #666;">دولة</div>
+                </div>
+                <div style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <div style="font-size: 3rem; font-weight: 700; color: #17a2b8; margin-bottom: 0.5rem;">1M+</div>
+                    <div style="color: #666;">معاملة يومياً</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq" style="padding: 80px 0; background: white;">
+        <div class="container">
+            <h2 class="section-title">الأسئلة الشائعة</h2>
+            <p style="text-align: center; color: #666; margin-bottom: 3rem; font-size: 1.1rem;">
+                إجابات على أكثر الأسئلة شيوعاً حول AS3G SYSTEM
+            </p>
+            
+            <div style="max-width: 800px; margin: 0 auto;">
+                <!-- Technical Questions -->
+                <div class="faq-category" style="margin-bottom: 3rem;">
+                    <h3 style="color: #2c5aa0; margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 2px solid #e9ecef;">
+                        <i class="fas fa-cogs"></i> الأسئلة التقنية
+                    </h3>
+                    
+                    <div class="faq-item" style="margin-bottom: 1rem; border: 1px solid #e9ecef; border-radius: 10px; overflow: hidden;">
+                        <div class="faq-question" onclick="toggleFAQ(this)" style="padding: 1.5rem; background: #f8f9fa; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-weight: 600; color: #333;">ما هي متطلبات النظام لتشغيل AS3G SYSTEM؟</span>
+                            <i class="fas fa-chevron-down" style="transition: transform 0.3s;"></i>
+                        </div>
+                        <div class="faq-answer" style="padding: 0 1.5rem; max-height: 0; overflow: hidden; transition: all 0.3s;">
+                            <div style="padding: 1.5rem 0; color: #666; line-height: 1.8;">
+                                <p><strong>للحاسوب:</strong></p>
+                                <ul style="margin: 1rem 0; padding-right: 2rem;">
+                                    <li>نظام التشغيل: Windows 10/11, macOS 10.15+, أو Linux Ubuntu 18.04+</li>
+                                    <li>المعالج: Intel Core i3 أو AMD Ryzen 3 (أو أحدث)</li>
+                                    <li>الذاكرة: 4 جيجابايت RAM (يُنصح بـ 8 جيجابايت)</li>
+                                    <li>مساحة التخزين: 2 جيجابايت مساحة فارغة</li>
+                                    <li>الاتصال: إنترنت مستقر بسرعة 5 ميجابت على الأقل</li>
+                                </ul>
+                                <p><strong>للموبايل:</strong> Android 8.0+ أو iOS 12.0+</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" style="margin-bottom: 1rem; border: 1px solid #e9ecef; border-radius: 10px; overflow: hidden;">
+                        <div class="faq-question" onclick="toggleFAQ(this)" style="padding: 1.5rem; background: #f8f9fa; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-weight: 600; color: #333;">هل يمكن استخدام النظام بدون إنترنت؟</span>
+                            <i class="fas fa-chevron-down" style="transition: transform 0.3s;"></i>
+                        </div>
+                        <div class="faq-answer" style="padding: 0 1.5rem; max-height: 0; overflow: hidden; transition: all 0.3s;">
+                            <div style="padding: 1.5rem 0; color: #666; line-height: 1.8;">
+                                <p>نعم، يمكن استخدام AS3G SYSTEM في الوضع المحلي (Offline Mode) للعمليات الأساسية مثل:</p>
+                                <ul style="margin: 1rem 0; padding-right: 2rem;">
+                                    <li>تسجيل المبيعات والفواتير</li>
+                                    <li>إدارة المخزون المحلي</li>
+                                    <li>طباعة الإيصالات</li>
+                                </ul>
+                                <p>ولكن للحصول على المميزات المتقدمة مثل التحليلات الذكية والتزامن مع الفروع الأخرى، يُنصح بالاتصال بالإنترنت.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" style="margin-bottom: 1rem; border: 1px solid #e9ecef; border-radius: 10px; overflow: hidden;">
+                        <div class="faq-question" onclick="toggleFAQ(this)" style="padding: 1.5rem; background: #f8f9fa; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-weight: 600; color: #333;">كيف يتم حفظ البيانات وما مدى أمانها؟</span>
+                            <i class="fas fa-chevron-down" style="transition: transform 0.3s;"></i>
+                        </div>
+                        <div class="faq-answer" style="padding: 0 1.5rem; max-height: 0; overflow: hidden; transition: all 0.3s;">
+                            <div style="padding: 1.5rem 0; color: #666; line-height: 1.8;">
+                                <p>نحن نستخدم أعلى معايير الأمان لحماية بياناتك:</p>
+                                <ul style="margin: 1rem 0; padding-right: 2rem;">
+                                    <li><strong>التشفير:</strong> تشفير AES-256 العسكري لجميع البيانات</li>
+                                    <li><strong>النسخ الاحتياطي:</strong> نسخ احتياطي تلقائي كل ساعة</li>
+                                    <li><strong>الخوادم:</strong> خوادم سحابية آمنة في مراكز بيانات معتمدة</li>
+                                    <li><strong>الوصول:</strong> مصادقة متعددة العوامل وصلاحيات محددة</li>
+                                    <li><strong>الشهادات:</strong> معتمدون من ISO 27001 و SOC 2</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pricing Questions -->
+                <div class="faq-category" style="margin-bottom: 3rem;">
+                    <h3 style="color: #2c5aa0; margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 2px solid #e9ecef;">
+                        <i class="fas fa-dollar-sign"></i> أسئلة حول الأسعار
+                    </h3>
+                    
+                    <div class="faq-item" style="margin-bottom: 1rem; border: 1px solid #e9ecef; border-radius: 10px; overflow: hidden;">
+                        <div class="faq-question" onclick="toggleFAQ(this)" style="padding: 1.5rem; background: #f8f9fa; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-weight: 600; color: #333;">هل توجد رسوم إضافية غير معلنة؟</span>
+                            <i class="fas fa-chevron-down" style="transition: transform 0.3s;"></i>
+                        </div>
+                        <div class="faq-answer" style="padding: 0 1.5rem; max-height: 0; overflow: hidden; transition: all 0.3s;">
+                            <div style="padding: 1.5rem 0; color: #666; line-height: 1.8;">
+                                <p><strong>لا، الأسعار شاملة وواضحة تماماً.</strong> ما تراه هو ما تدفعه، ويشمل:</p>
+                                <ul style="margin: 1rem 0; padding-right: 2rem;">
+                                    <li>جميع المميزات المذكورة في الباقة</li>
+                                    <li>التحديثات والصيانة</li>
+                                    <li>الدعم الفني حسب الباقة</li>
+                                    <li>النسخ الاحتياطي والأمان</li>
+                                    <li>التدريب الأساسي</li>
+                                </ul>
+                                <p><strong>الرسوم الإضافية الوحيدة:</strong> طلبات التخصيص الخاصة أو التدريب المتقدم (بالاتفاق المسبق)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" style="margin-bottom: 1rem; border: 1px solid #e9ecef; border-radius: 10px; overflow: hidden;">
+                        <div class="faq-question" onclick="toggleFAQ(this)" style="padding: 1.5rem; background: #f8f9fa; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-weight: 600; color: #333;">هل يمكنني تجربة النظام قبل الشراء؟</span>
+                            <i class="fas fa-chevron-down" style="transition: transform 0.3s;"></i>
+                        </div>
+                        <div class="faq-answer" style="padding: 0 1.5rem; max-height: 0; overflow: hidden; transition: all 0.3s;">
+                            <div style="padding: 1.5rem 0; color: #666; line-height: 1.8;">
+                                <p><strong>بالطبع! نوفر فترة تجريبية مجانية لمدة 14 يوم</strong> تشمل:</p>
+                                <ul style="margin: 1rem 0; padding-right: 2rem;">
+                                    <li>وصول كامل لجميع مميزات الباقة المختارة</li>
+                                    <li>دعم فني مجاني خلال فترة التجربة</li>
+                                    <li>تدريب أساسي لفريقك</li>
+                                    <li>إمكانية إلغاء الاشتراك بدون أي التزامات</li>
+                                </ul>
+                                <p><strong>كما نوفر ضمان استرداد المال خلال 30 يوم</strong> من بداية الاشتراك المدفوع.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" style="margin-bottom: 1rem; border: 1px solid #e9ecef; border-radius: 10px; overflow: hidden;">
+                        <div class="faq-question" onclick="toggleFAQ(this)" style="padding: 1.5rem; background: #f8f9fa; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-weight: 600; color: #333;">هل توجد خصومات للاشتراكات السنوية؟</span>
+                            <i class="fas fa-chevron-down" style="transition: transform 0.3s;"></i>
+                        </div>
+                        <div class="faq-answer" style="padding: 0 1.5rem; max-height: 0; overflow: hidden; transition: all 0.3s;">
+                            <div style="padding: 1.5rem 0; color: #666; line-height: 1.8;">
+                                <p><strong>نعم، نوفر خصومات مجزية للاشتراكات السنوية:</strong></p>
+                                <ul style="margin: 1rem 0; padding-right: 2rem;">
+                                    <li><strong>الاشتراك السنوي:</strong> خصم 15% (شهرين مجاناً)</li>
+                                    <li><strong>الاشتراك لسنتين:</strong> خصم 25%</li>
+                                    <li><strong>الاشتراك لثلاث سنوات:</strong> خصم 35%</li>
+                                </ul>
+                                <p><strong>خصومات إضافية:</strong></p>
+                                <ul style="margin: 1rem 0; padding-right: 2rem;">
+                                    <li>خصم 10% للشركات الناشئة</li>
+                                    <li>خصم 20% للمؤسسات التعليمية والخيرية</li>
+                                    <li>خصم 5% إضافي للعملاء الحاليين عند الترقية</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Support Questions -->
+                <div class="faq-category">
+                    <h3 style="color: #2c5aa0; margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 2px solid #e9ecef;">
+                        <i class="fas fa-headset"></i> أسئلة حول الدعم الفني
+                    </h3>
+                    
+                    <div class="faq-item" style="margin-bottom: 1rem; border: 1px solid #e9ecef; border-radius: 10px; overflow: hidden;">
+                        <div class="faq-question" onclick="toggleFAQ(this)" style="padding: 1.5rem; background: #f8f9fa; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-weight: 600; color: #333;">ما هي أوقات عمل الدعم الفني؟</span>
+                            <i class="fas fa-chevron-down" style="transition: transform 0.3s;"></i>
+                        </div>
+                        <div class="faq-answer" style="padding: 0 1.5rem; max-height: 0; overflow: hidden; transition: all 0.3s;">
+                            <div style="padding: 1.5rem 0; color: #666; line-height: 1.8;">
+                                <p><strong>أوقات الدعم تختلف حسب الباقة:</strong></p>
+                                <ul style="margin: 1rem 0; padding-right: 2rem;">
+                                    <li><strong>الباقة الأساسية:</strong> من 9 صباحاً إلى 6 مساءً (الأحد - الخميس)</li>
+                                    <li><strong>الباقة المتقدمة:</strong> 24/7 مع أولوية متوسطة</li>
+                                    <li><strong>الباقة الاحترافية:</strong> 24/7 مع أولوية عالية ومدير حساب مخصص</li>
+                                </ul>
+                                <p><strong>قنوات التواصل:</strong></p>
+                                <ul style="margin: 1rem 0; padding-right: 2rem;">
+                                    <li>الهاتف: +20 123 456 7890</li>
+                                    <li>الواتساب: +20 123 456 7890</li>
+                                    <li>البريد الإلكتروني: support@as3gsystem.com</li>
+                                    <li>الدردشة المباشرة عبر الموقع</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" style="margin-bottom: 1rem; border: 1px solid #e9ecef; border-radius: 10px; overflow: hidden;">
+                        <div class="faq-question" onclick="toggleFAQ(this)" style="padding: 1.5rem; background: #f8f9fa; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-weight: 600; color: #333;">كم يستغرق حل المشاكل التقنية؟</span>
+                            <i class="fas fa-chevron-down" style="transition: transform 0.3s;"></i>
+                        </div>
+                        <div class="faq-answer" style="padding: 0 1.5rem; max-height: 0; overflow: hidden; transition: all 0.3s;">
+                            <div style="padding: 1.5rem 0; color: #666; line-height: 1.8;">
+                                <p><strong>أوقات الاستجابة المضمونة:</strong></p>
+                                <ul style="margin: 1rem 0; padding-right: 2rem;">
+                                    <li><strong>المشاكل الحرجة:</strong> خلال 15 دقيقة (الباقة الاحترافية) أو ساعة واحدة (الباقات الأخرى)</li>
+                                    <li><strong>المشاكل العادية:</strong> خلال 4 ساعات</li>
+                                    <li><strong>الاستفسارات العامة:</strong> خلال 24 ساعة</li>
+                                </ul>
+                                <p><strong>معدل حل المشاكل:</strong></p>
+                                <ul style="margin: 1rem 0; padding-right: 2rem;">
+                                    <li>85% من المشاكل تُحل في المكالمة الأولى</li>
+                                    <li>95% من المشاكل تُحل خلال 24 ساعة</li>
+                                    <li>99.5% من المشاكل تُحل خلال 48 ساعة</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" style="margin-bottom: 1rem; border: 1px solid #e9ecef; border-radius: 10px; overflow: hidden;">
+                        <div class="faq-question" onclick="toggleFAQ(this)" style="padding: 1.5rem; background: #f8f9fa; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-weight: 600; color: #333;">هل يتم توفير التدريب للموظفين؟</span>
+                            <i class="fas fa-chevron-down" style="transition: transform 0.3s;"></i>
+                        </div>
+                        <div class="faq-answer" style="padding: 0 1.5rem; max-height: 0; overflow: hidden; transition: all 0.3s;">
+                            <div style="padding: 1.5rem 0; color: #666; line-height: 1.8;">
+                                <p><strong>نعم، نوفر تدريب شامل مجاني يشمل:</strong></p>
+                                <ul style="margin: 1rem 0; padding-right: 2rem;">
+                                    <li><strong>التدريب الأساسي:</strong> 4 ساعات تدريبية مجانية لجميع الباقات</li>
+                                    <li><strong>التدريب المتقدم:</strong> 8 ساعات إضافية للباقة المتقدمة والاحترافية</li>
+                                    <li><strong>ورش العمل:</strong> ورش دورية مجانية للباقة الاحترافية</li>
+                                </ul>
+                                <p><strong>أساليب التدريب:</strong></p>
+                                <ul style="margin: 1rem 0; padding-right: 2rem;">
+                                    <li>تدريب مباشر في موقع العمل</li>
+                                    <li>تدريب عن بُعد عبر الإنترنت</li>
+                                    <li>فيديوهات تدريبية تفاعلية</li>
+                                    <li>دليل المستخدم المصور</li>
+                                    <li>قاعدة المعرفة الشاملة</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact CTA -->
+            <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 15px; color: white;">
+                <h3 style="margin-bottom: 1rem;">لم تجد إجابة لسؤالك؟</h3>
+                <p style="margin-bottom: 2rem; opacity: 0.9;">فريق الدعم الفني متاح لمساعدتك في أي وقت</p>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="support.html" class="btn-primary" style="background: rgba(255,255,255,0.2); border: 2px solid white;">
+                        <i class="fas fa-headset"></i> تواصل مع الدعم
+                    </a>
+                    <a href="tel:+201234567890" class="btn-primary" style="background: rgba(255,255,255,0.2); border: 2px solid white;">
+                        <i class="fas fa-phone"></i> اتصل بنا الآن
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-microchip"></i> AS3G SYSTEM</h3>
+                    <p>نحن نقدم أنظمة الكاشير الذكية الأكثر تطوراً لإدارة أعمالك بكفاءة عالية</p>
+                    <div class="social-links" style="margin-top: 1rem;">
+                        <!-- Social media links will be loaded dynamically -->
+                        <a href="#" style="color: #bdc3c7; margin-left: 1rem; font-size: 1.5rem;"><i class="fab fa-facebook"></i></a>
+                        <a href="#" style="color: #bdc3c7; margin-left: 1rem; font-size: 1.5rem;"><i class="fab fa-twitter"></i></a>
+                        <a href="#" style="color: #bdc3c7; margin-left: 1rem; font-size: 1.5rem;"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" style="color: #bdc3c7; margin-left: 1rem; font-size: 1.5rem;"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>روابط سريعة</h3>
+                    <ul>
+                        <li><a href="#home">الرئيسية</a></li>
+                        <li><a href="#systems">الأنظمة</a></li>
+                        <li><a href="support.html">الدعم الفني</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>تواصل معنا</h3>
+                    <p><i class="fas fa-phone"></i> +201032543188</p>
+                    <p><i class="fas fa-envelope"></i> info@cashiersystems.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 أنظمة الكاشير. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Firebase Scripts -->
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth-compat.js"></script>
+    <script src="firebase-config.js"></script>
+    <script src="firebase-init.js"></script>
+    <script src="social-media-manager.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

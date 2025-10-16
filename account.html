@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حسابي - أنظمة الكاشير</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .account-container {
+            min-height: 100vh;
+            background: #f8f9fa;
+            padding: 2rem 0;
+        }
+        
+        .account-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3rem 0;
+            margin-bottom: 2rem;
+        }
+        
+        .account-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .account-nav {
+            background: white;
+            border-radius: 10px;
+            padding: 1rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .nav-tabs {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .nav-tab {
+            padding: 0.8rem 1.5rem;
+            border: none;
+            background: #f8f9fa;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+            color: #666;
+        }
+        
+        .nav-tab.active {
+            background: #2c5aa0;
+            color: white;
+        }
+        
+        .nav-tab:hover:not(.active) {
+            background: #e9ecef;
+        }
+        
+        .account-content {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .profile-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .info-card {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-right: 4px solid #2c5aa0;
+        }
+        
+        .info-card h3 {
+            color: #2c5aa0;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .info-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .info-item:last-child {
+            border-bottom: none;
+        }
+        
+        .info-label {
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .info-value {
+            color: #666;
+        }
+        
+        .orders-grid {
+            display: grid;
+            gap: 1rem;
+        }
+        
+        .order-card {
+            border: 1px solid #e9ecef;
+            border-radius: 10px;
+            padding: 1.5rem;
+            transition: box-shadow 0.3s;
+        }
+        
+        .order-card:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .order-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .order-id {
+            font-weight: 600;
+            color: #2c5aa0;
+        }
+        
+        .order-status {
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        
+        .status-pending {
+            background: #fff3cd;
+            color: #856404;
+        }
+        
+        .status-approved {
+            background: #d4edda;
+            color: #155724;
+        }
+        
+        .status-rejected {
+            background: #f8d7da;
+            color: #721c24;
+        }
+        
+        .order-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .detail-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+        }
+        
+        .detail-label {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .detail-value {
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .logout-btn {
+            background: #dc3545;
+            color: white;
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        
+        .logout-btn:hover {
+            background: #c82333;
+        }
+        
+        .empty-state {
+            text-align: center;
+            padding: 3rem;
+            color: #666;
+        }
+        
+        .empty-state i {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            color: #ccc;
+        }
+        
+        .back-home {
+            text-align: center;
+            margin-top: 2rem;
+        }
+        
+        .back-home a {
+            color: #2c5aa0;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+        }
+        
+        .back-home a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="account-container">
+        <div class="account-header">
+            <div class="container">
+                <h1><i class="fas fa-user-circle"></i> حسابي</h1>
+                <p>مرحباً بك في لوحة تحكم حسابك</p>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="account-nav">
+                <div class="nav-tabs">
+                    <button class="nav-tab active" onclick="switchAccountTab('profile')">
+                        <i class="fas fa-user"></i> الملف الشخصي
+                    </button>
+                    <button class="nav-tab" onclick="switchAccountTab('orders')">
+                        <i class="fas fa-shopping-cart"></i> طلباتي
+                    </button>
+                    <button class="nav-tab" onclick="switchAccountTab('support')">
+                        <i class="fas fa-headset"></i> تذاكر الدعم
+                    </button>
+                    <button class="nav-tab" onclick="switchAccountTab('settings')">
+                        <i class="fas fa-cog"></i> الإعدادات
+                    </button>
+                    <button class="logout-btn" onclick="handleLogout()">
+                        <i class="fas fa-sign-out-alt"></i> تسجيل الخروج
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Profile Tab -->
+            <div id="profileTab" class="account-content tab-content active">
+                <h2><i class="fas fa-user"></i> الملف الشخصي</h2>
+                <div class="profile-info" id="profileInfo">
+                    <!-- Profile info will be loaded here -->
+                </div>
+                
+                <button class="btn-primary" onclick="showEditProfile()">
+                    <i class="fas fa-edit"></i> تعديل الملف الشخصي
+                </button>
+            </div>
+            
+            <!-- Orders Tab -->
+            <div id="ordersTab" class="account-content tab-content">
+                <h2><i class="fas fa-shopping-cart"></i> طلباتي</h2>
+                <div class="orders-grid" id="ordersGrid">
+                    <!-- Orders will be loaded here -->
+                </div>
+            </div>
+            
+            <!-- Support Tab -->
+            <div id="supportTab" class="account-content tab-content">
+                <h2><i class="fas fa-headset"></i> تذاكر الدعم الفني</h2>
+                <div class="orders-grid" id="supportTicketsGrid">
+                    <!-- Support tickets will be loaded here -->
+                </div>
+            </div>
+            
+            <!-- Settings Tab -->
+            <div id="settingsTab" class="account-content tab-content">
+                <h2><i class="fas fa-cog"></i> الإعدادات</h2>
+                
+                <div class="form-group">
+                    <h3>تغيير كلمة المرور</h3>
+                    <form id="changePasswordForm">
+                        <div class="form-group">
+                            <label for="currentPassword">كلمة المرور الحالية</label>
+                            <input type="password" id="currentPassword" name="currentPassword" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="newPassword">كلمة المرور الجديدة</label>
+                            <input type="password" id="newPassword" name="newPassword" required minlength="6">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="confirmNewPassword">تأكيد كلمة المرور الجديدة</label>
+                            <input type="password" id="confirmNewPassword" name="confirmNewPassword" required minlength="6">
+                        </div>
+                        
+                        <button type="submit" class="btn-submit">
+                            <span class="btn-text">تغيير كلمة المرور</span>
+                            <span class="loading" style="display: none;"></span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="back-home">
+                <a href="index.html">
+                    <i class="fas fa-home"></i>
+                    العودة للصفحة الرئيسية
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase Scripts -->
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth-compat.js"></script>
+    <script src="firebase-config.js"></script>
+    <script src="firebase-init.js"></script>
+    <script src="account.js"></script>
+</body>
+</html>

@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الدعم الفني - أنظمة الكاشير</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .support-container {
+            min-height: 100vh;
+            background: #f8f9fa;
+            padding: 2rem 0;
+        }
+        
+        .support-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3rem 0;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .support-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .support-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .support-form-section,
+        .support-tickets-section {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .section-title {
+            color: #2c5aa0;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .priority-select {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .priority-option {
+            padding: 1rem;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .priority-option.selected {
+            border-color: #2c5aa0;
+            background: #f8f9fa;
+        }
+        
+        .priority-low {
+            color: #28a745;
+        }
+        
+        .priority-medium {
+            color: #ffc107;
+        }
+        
+        .priority-high {
+            color: #dc3545;
+        }
+        
+        .tickets-list {
+            max-height: 600px;
+            overflow-y: auto;
+        }
+        
+        .ticket-card {
+            border: 1px solid #e9ecef;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            transition: box-shadow 0.3s;
+        }
+        
+        .ticket-card:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .ticket-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .ticket-id {
+            font-weight: 600;
+            color: #2c5aa0;
+        }
+        
+        .ticket-status {
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        
+        .status-open {
+            background: #fff3cd;
+            color: #856404;
+        }
+        
+        .status-in-progress {
+            background: #cce7ff;
+            color: #004085;
+        }
+        
+        .status-resolved {
+            background: #d4edda;
+            color: #155724;
+        }
+        
+        .status-closed {
+            background: #f8d7da;
+            color: #721c24;
+        }
+        
+        .ticket-priority {
+            padding: 0.2rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .priority-high-badge {
+            background: #f8d7da;
+            color: #721c24;
+        }
+        
+        .priority-medium-badge {
+            background: #fff3cd;
+            color: #856404;
+        }
+        
+        .priority-low-badge {
+            background: #d4edda;
+            color: #155724;
+        }
+        
+        .ticket-subject {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+        
+        .ticket-description {
+            color: #666;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+        
+        .ticket-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+            color: #888;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .ticket-replies {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e9ecef;
+        }
+        
+        .reply-item {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 0.5rem;
+        }
+        
+        .reply-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+        
+        .reply-author {
+            font-weight: 600;
+            color: #2c5aa0;
+        }
+        
+        .reply-date {
+            color: #888;
+        }
+        
+        .reply-content {
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .empty-state {
+            text-align: center;
+            padding: 3rem;
+            color: #666;
+        }
+        
+        .empty-state i {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            color: #ccc;
+        }
+        
+        .back-home {
+            text-align: center;
+            margin-top: 2rem;
+        }
+        
+        .back-home a {
+            color: #2c5aa0;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+        }
+        
+        .back-home a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .support-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .priority-select {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="support-container">
+        <div class="support-header">
+            <div class="container">
+                <h1><i class="fas fa-headset"></i> الدعم الفني</h1>
+                <p>نحن هنا لمساعدتك في حل أي مشكلة تواجهها</p>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="support-content">
+                <!-- Support Form Section -->
+                <div class="support-form-section">
+                    <h2 class="section-title">
+                        <i class="fas fa-plus-circle"></i>
+                        إنشاء تذكرة دعم جديدة
+                    </h2>
+                    
+                    <form id="supportForm">
+                        <div class="form-group">
+                            <label for="ticketSubject">موضوع المشكلة *</label>
+                            <input type="text" id="ticketSubject" name="subject" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>أولوية المشكلة *</label>
+                            <div class="priority-select">
+                                <div class="priority-option priority-low" onclick="selectPriority('low', this)">
+                                    <i class="fas fa-arrow-down"></i>
+                                    <div>منخفضة</div>
+                                </div>
+                                <div class="priority-option priority-medium selected" onclick="selectPriority('medium', this)">
+                                    <i class="fas fa-minus"></i>
+                                    <div>متوسطة</div>
+                                </div>
+                                <div class="priority-option priority-high" onclick="selectPriority('high', this)">
+                                    <i class="fas fa-arrow-up"></i>
+                                    <div>عالية</div>
+                                </div>
+                            </div>
+                            <input type="hidden" id="ticketPriority" name="priority" value="medium">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="ticketDescription">وصف المشكلة بالتفصيل *</label>
+                            <textarea id="ticketDescription" name="description" rows="6" required 
+                                placeholder="يرجى وصف المشكلة بأكبر قدر من التفاصيل لمساعدتنا في حلها بسرعة..."></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contactInfo">معلومات التواصل (اختياري)</label>
+                            <input type="text" id="contactInfo" name="contactInfo" 
+                                placeholder="رقم الهاتف أو بريد إلكتروني إضافي">
+                        </div>
+                        
+                        <button type="submit" class="btn-submit">
+                            <span class="btn-text">إرسال تذكرة الدعم</span>
+                            <span class="loading" style="display: none;"></span>
+                        </button>
+                    </form>
+                </div>
+                
+                <!-- Support Tickets Section -->
+                <div class="support-tickets-section">
+                    <h2 class="section-title">
+                        <i class="fas fa-ticket-alt"></i>
+                        تذاكر الدعم الخاصة بي
+                    </h2>
+                    
+                    <div class="tickets-list" id="ticketsList">
+                        <!-- Tickets will be loaded here -->
+                    </div>
+                </div>
+            </div>
+            
+            <div class="back-home">
+                <a href="index.html">
+                    <i class="fas fa-home"></i>
+                    العودة للصفحة الرئيسية
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="support.js"></script>
+</body>
+</html>
